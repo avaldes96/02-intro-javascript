@@ -1,17 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//destructuracion
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const persona = {
+  nombre: "tony",
+  edad: 45,
+  clave: "admin123",
+};
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const { nombre } = persona;
+const { edad, clave } = persona;
+
+console.log(nombre);
+console.log(edad);
+console.log(clave);
+
+const retornaPersona = ({ nombre, edad, rango = "capitan" }) => {
+  console.log(nombre, edad, rango);
+};
+
+retornaPersona(persona);
